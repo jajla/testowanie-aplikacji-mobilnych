@@ -11,17 +11,22 @@ class PersonListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_person_list)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         val db = DatabaseHelper(this)
         val persons = db.getAllPersons()
 
         val listView = findViewById<ListView>(R.id.listViewPersons)
-
         val adapter = ArrayAdapter(
             this,
             android.R.layout.simple_list_item_1,
             persons.map { "${it.firstName} ${it.lastName} - ${it.phone}" }
         )
-
         listView.adapter = adapter
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 }
