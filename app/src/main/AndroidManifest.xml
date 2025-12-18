@@ -11,6 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Testowanie_aplikacji_mobilnych">
+
+        <activity android:name=".DeletePersonActivity" />
+        <activity android:name=".PersonListActivity" />
+        <activity android:name=".AddPersonActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
